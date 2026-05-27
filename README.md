@@ -4,11 +4,6 @@
 
 PHP reader and writer for [CSVJ](https://csvj.org) files. PHP 8.2+.
 
-> **Status (2026-05-27):** repo scaffolding only. `Csvj::parse` and
-> `Csvj::stringify` are placeholder methods that throw `LogicException` so
-> consumers can pin against the public surface before reader/writer
-> implementation lands.
-
 ## Overview
 
 CSVJ is a tabular data format where each value is a JSON literal. The
@@ -18,8 +13,11 @@ reference at [csvj-org/jscsvj](https://github.com/csvj-org/jscsvj), and
 the language-agnostic conformance suite at
 [csvj-org/conformance](https://github.com/csvj-org/conformance).
 
-This package targets parity with the conformance suite once
-implementation lands.
+The reader enforces every §1 rule (empty input rejected; trailing
+newline required; ragged rows rejected; duplicate header names
+rejected; only `string | int | float | bool | null` permitted at value
+position; JSON lexical rules per RFC 8259) and passes all 25 vectors of
+`csvj-org/conformance@master`.
 
 ## Parse
 

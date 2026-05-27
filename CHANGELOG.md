@@ -25,3 +25,8 @@ then breaking changes may occur in any release.
   every must-reject vector from the conformance suite. All 25 vectors
   in `csvj-org/conformance@master` pass (CI wiring tracked separately
   per PLAN §7a.3).
+- `conformance` GHA job that checks out `csvj-org/conformance@master`
+  alongside this checkout and runs an opt-in `conformance` PHPUnit
+  testsuite against every vector, no skips. The default `phpunit` run
+  is unaffected — the conformance suite is gated behind
+  `--testsuite=conformance` and the `CSVJ_CONFORMANCE_DIR` env var.

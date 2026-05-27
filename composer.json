@@ -1,0 +1,30 @@
+{
+    "name": "csvj-org/phpcsvj",
+    "description": "PHP reader/writer for CSVJ files (https://csvj.org)",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://csvj.org",
+    "keywords": ["csvj", "csv", "json", "tabular"],
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Csvj\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Csvj\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
